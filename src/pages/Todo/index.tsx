@@ -32,12 +32,10 @@ function Todo() {
   useEffect(() => {
     if (!token) {
       navigate("/signin");
+    } else {
+      fetchTodos();
     }
   });
-
-  useEffect(() => {
-    fetchTodos();
-  }, []);
 
   const api = axios.create({
     baseURL: "https://www.pre-onboarding-selection-task.shop",
